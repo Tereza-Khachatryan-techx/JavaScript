@@ -49,6 +49,7 @@ body {
     font-size: 16px;
     padding: 0 15px;
     box-sizing: border-box;
+    outline: none;
 }
 
 .phone-mail {
@@ -106,9 +107,6 @@ thead th:first-child{
     background: white;
 }
 
-.table tr {
-    border-left: 0;
-}
 .table-input {
     width: 100%;
     border: none;
