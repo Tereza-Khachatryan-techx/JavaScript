@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costumer Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <form class="main-form">
+        <h1 class="heading">Customer Details:</h1>
+        <div class="all-inputs">
+            <!-- Full Name -->
+            <div class="name-input">
+                <h3 class="input-name">Full Name</h3>
+                <div class="inputs">
+                    <div class="first-name">
+                        <label for="first-name" style="display: none;">First name</label>
+                        <input id="first-name" class="input" type="text" required />
+                        <p>First name</p>
+                    </div>
+                    <div class="last-name">
+                        <label for="last-name" style="display: none;">Last name</label>
+                        <input id="last-name" class="input" type="text" required />
+                        <p>Last name</p>
+                    </div>
+                </div>
+                <div class="error-message"></div>
+            </div>
+
+            <!-- Address -->
+            <div class="address-input">
+                <h3 class="input-name">Address:</h3>
+                <label for="address-line1" style="display: none;">Street Address</label>
+                <input id="address-line1" class="input" type="text" required />
+                <p>Street Address</p>
+
+                <label for="address-line2" style="display: none;">Street Address Line 2</label>
+                <input id="address-line2" class="input" type="text" required />
+                <p>Street Address Line 2</p>
+
+                <div class="inputs">
+                    <div style="flex: 1">
+                        <label for="city" style="display: none;">City</label>
+                        <input id="city" class="input" type="text" required />
+                        <p>City</p>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="state" style="display: none;">State / Province</label>
+                        <input id="state" class="input" type="text" required />
+                        <p>State / Province</p>
+                    </div>
+                </div>
+
+                <label for="zip" style="display: none;">Postal / Zip Code</label>
+                <input id="zip" type="text" class="input" required />
+                <p>Postal / Zip Code</p>
+            </div>
+
+            <!-- Phone and Email -->
+            <div class="inputs phone-mail">
+                <div class="phone">
+                    <h3 class="input-name">Phone Number</h3>
+                    <label for="phone" style="display: none;">Phone Number</label>
+                    <input id="phone" type="tel" class="input short-input" placeholder="(000) 000-0000" required />
+                </div>
+                <div class="mail">
+                    <h3 class="input-name">E-mail</h3>
+                    <label for="email" style="display: none;">E-mail</label>
+                    <input id="email" type="email" class="input short-input" placeholder="example@example.com" required />
+                    <p>example@example.com</p>
+                </div>
+        </div>
+        </div>
+        <!-- How did you hear about us -->
+        <h3 class="input-name">How did you hear about us?</h3>
+        <select class="short-input select" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="newspaper">Newspaper</option>
+            <option value="other">Other</option>
+        </select>
+
+        <!-- Feedback -->
+        <h3 class="input-name">Feedback about us:</h3>
+        <textarea name="feedback" rows="7" style="width: 100%;" required></textarea>
+
+        <!-- Suggestions -->
+        <h3 class="input-name">Suggestions if any for further improvement:</h3>
+        <textarea name="suggestions" rows="7" style="width: 100%;"></textarea>
+
+        <!-- Recommendation -->
+        <h3 class="input-name">Will you be willing to recommend us?</h3>
+        <div class="check-inputs">
+            <div class="checkbox-input">
+                <input type="checkbox" id="yes" name="recommend" value="yes" required />
+                <label for="yes">Yes</label>
+            </div>
+            <div class="checkbox-input">
+                <input type="checkbox" id="maybe" name="recommend" value="maybe" />
+                <label for="maybe">Maybe</label>
+            </div>
+            <div class="checkbox-input">
+                <input type="checkbox" id="no" name="recommend" value="no" />
+                <label for="no">No</label>
+            </div>
+        </div>
+
+        <!-- Table -->
+         <h3 class="input-name">Please give reference of any two people whom you feel:</h3>
+         <div class="table-div">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Full Name</th>
+                        <th>Address</th>
+                        <th>Contact Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-num">1</td>
+                        <td><input class="table-input" type="text"/></td>
+                        <td><input class="table-input" type="text"/></td>
+                        <td><input class="table-input" type="text"/></td>
+                    </tr>
+                    <tr>
+                        <td class="table-num">2</td>
+                        <td><input class="table-input" type="text"/></td>
+                        <td><input class="table-input" type="text"/></td>
+                        <td><input class="table-input" type="text"/></td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+         <!-- Submit  -->
+          <div class="submit-container">
+            <button class="submit-btn">Submit</button>
+          </div>
+    </form>
+</body>
+</html>
