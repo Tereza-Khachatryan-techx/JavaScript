@@ -10,15 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     select.addEventListener('change', () => {
         if (select.value === 'other') {
-            otherSelect.style.display = 'block'
-            const otherError = document.querySelector('.error-message')
-            otherError.style.display = 'flex'
+            otherSelect.style.display = 'block';
+            const otherError = otherSelect.querySelector('.error-message');
+            if (otherError) otherError.style.display = 'none';
         } else {
-            otherSelect.style.display = 'none'
-            otherInput.value = ''
-            otherSelect.style.background = ''
+            otherSelect.style.display = 'none';
+            otherInput.value = '';
+            otherSelect.style.background = '';
+            const otherError = otherSelect.querySelector('.error-message');
+            if (otherError) otherError.style.display = 'none';
         }
     });
+
 
     form.addEventListener('submit', (e) => {
         e.preventDefault()
@@ -33,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         inputs.forEach(input => {
-            const wrapper = input.closest('.name-input, .address-input, .phone-mail,.mail, .select-other')
+            const wrapper = input.closest('.name-input, .address-input, .phone-mail, .phone, .mail, .select-other')
             if (!input.value.trim()) {
                 formValid = false
                 if (wrapper) {
@@ -56,15 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 formValid = false;
                 otherSelect.style.background = 'rgb(255, 237, 237)'
                 otherSelect.style.padding = '10px'
-                const otherError = otherSelect.querySelector('.error-message')
-                if (otherError) otherError.style.display = 'flex'
             } else {
                 otherSelect.style.background = 'rgb(241, 245, 255)'
                 formData['heardAboutUs'] = otherInput.value.trim()
             }
         } else {
+            formValid = true
             select.style.background = 'rgb(241, 245, 255)'
-            formData['heardAboutUs'] = select.valu
+            formData['heardAboutUs'] = select.value
         }
 
         if (!formValid) {
@@ -104,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.error-message').forEach(err => {
             err.style.display = 'none'
         });
-
         console.log('Added to local storage', formData)
     })
 })
+

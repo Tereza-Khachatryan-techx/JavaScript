@@ -159,6 +159,11 @@ select {
     transition: background-color 0.3s ease;
 }
 
+.phone-mail {
+    display: flex;
+    flex-direction: column;
+}
+
 .select-other {
     display: none;
     margin-top:10px;
