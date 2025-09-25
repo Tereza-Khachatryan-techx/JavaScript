@@ -31,16 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.name-input, .address-input, .phone-mail, .select-other').forEach(div => {
             div.style.background = ''
         });
-        document.querySelectorAll('.error-message').forEach(err => {
-            err.style.display = 'none'
-        });
 
         inputs.forEach(input => {
-            const wrapper = input.closest('.name-input, .address-input, .phone-mail, .select-other')
+            const wrapper = input.closest('.name-input, .address-input, .phone-mail,.mail, .select-other')
             if (!input.value.trim()) {
                 formValid = false
                 if (wrapper) {
                     wrapper.style.background = 'rgb(255, 237, 237)'
+                    wrapper.style.padding = '10px'
                     const error = wrapper.querySelector('.error-message')
                     if (error) error.style.display = 'flex'
                 }
