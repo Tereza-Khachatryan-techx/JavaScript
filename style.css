@@ -7,6 +7,9 @@ body {
     align-items: center;
     background: white;
     min-height: 100vh;
+}
+
+html {
     font-family: 'Inter', sans-serif;
 }
 
@@ -170,11 +173,6 @@ select {
 .select-other {
     display: none;
     margin-top:10px;
-}
-
-.select-other input {
-    width: 370px;
-    border: 1px solid rgba(103, 87, 87, 0.382);
 }
 
 .error-message{

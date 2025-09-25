@@ -11,14 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     select.addEventListener('change', () => {
         if (select.value === 'other') {
             otherSelect.style.display = 'block';
-            const otherError = otherSelect.querySelector('.error-message');
-            if (otherError) otherError.style.display = 'none';
         } else {
             otherSelect.style.display = 'none';
             otherInput.value = '';
             otherSelect.style.background = '';
             const otherError = otherSelect.querySelector('.error-message');
-            if (otherError) otherError.style.display = 'none';
+            otherError.style.display = 'none';
         }
     });
 
@@ -47,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 if (wrapper) wrapper.style.background = 'rgb(241, 245, 255)'
+                const error = wrapper.querySelector('.error-message')
+                error.style.display = 'none'
             }
         });
 
