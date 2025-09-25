@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Costumer Details</title>
+    <title>Details</title>
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
 </head>
@@ -57,7 +57,7 @@
                 </div>
 
                 <label for="zip" style="display: none;">Postal / Zip Code</label>
-                <input id="zip" type="text" class="input" />
+                <input id="zip" inputmode="numeric" pattern="\d*"  type="text" class="input" />
                 <p>Postal / Zip Code</p>
                 <div class="error-message">
                     <img src="assets/info.png" width="20px" height="20px"/>
@@ -70,7 +70,7 @@
                 <div class="phone">
                     <h3 class="input-name">Phone Number</h3>
                     <label for="phone" style="display: none;">Phone Number</label>
-                    <input id="phone" type="tel" class="input short-input" placeholder="(000) 000-0000" />
+                    <input id="phone" inputmode="numeric" pattern="\d*"  type="text" class="input short-input" placeholder="(000) 000-0000" />
                     <!-- Error-message -->
                     <div class="error-message">
                         <img src="assets/info.png" width="20px" height="20px"/>
@@ -149,13 +149,13 @@
                             <td class="table-num">1</td>
                             <td><input class="table-input" type="text"/></td>
                             <td><input class="table-input" type="text"/></td>
-                            <td><input class="table-input" type="number"/></td>
+                            <td><input class="table-input" inputmode="numeric" pattern="\d*"  type="text"/></td>
                         </tr>
                         <tr>
                             <td class="table-num">2</td>
                             <td><input class="table-input" type="text"/></td>
                             <td><input class="table-input" type="text"/></td>
-                            <td><input class="table-input" type="number"/></td>
+                            <td><input class="table-input" inputmode="numeric" pattern="\d*"  type="text"/></td>
                         </tr>
                     </tbody>
                 </table>

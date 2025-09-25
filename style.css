@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background: white;
     min-height: 100vh;
+    background: rgb(241, 245, 255);
 }
 
 html {
@@ -18,6 +18,8 @@ html {
     max-width: 800px;
     padding: 20px;
     box-sizing: border-box;
+    background: white;
+    margin-top: 20px;
 }
 
 .all-inputs {
@@ -168,6 +170,7 @@ select {
 .phone-mail {
     display: flex;
     flex-direction: column;
+    gap: 0;
 }
 
 .select-other {
