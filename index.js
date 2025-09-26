@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const select = document.querySelector('.select');
     const otherSelect = document.querySelector('.select-other');
     const otherInput = otherSelect.querySelector('input');
+    const modal = document.querySelector('.modal')
 
     document.querySelectorAll('.error-message').forEach(err => {
         err.style.display = 'none';
@@ -20,6 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    modal.addEventListener('click', (e) => {
+        if(e.target === modal){
+            modal.style.display = 'none';
+            document.body.classList.remove('no-scroll')
+        }
+    })
 
     form.addEventListener('submit', (e) => {
         e.preventDefault()
@@ -97,8 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
             formData[`tableInput${index + 1}`] = input.value
         });
 
-        localStorage.setItem('customerDetails', JSON.stringify(formData))
-
         form.reset()
         otherSelect.style.display = 'none'
         otherSelect.style.background = ''
@@ -106,7 +111,20 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.error-message').forEach(err => {
             err.style.display = 'none'
         });
+
+        localStorage.setItem('customerDetails', JSON.stringify(formData))
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(() => {
+                requestAnimationFrame(() => {
+                modal.style.display = 'flex'
+                document.body.classList.add("no-scroll");
+            })
+        }, 200)
+        document.querySelectorAll('.name-input, .address-input, .phone, .mail, .select-other').forEach(div => {
+            div.style.background = ''
+        });
         console.log('Added to local storage', formData)
     })
+    modal.style.display = 'none'
 })
 

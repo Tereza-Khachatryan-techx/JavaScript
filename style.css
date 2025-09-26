@@ -19,7 +19,7 @@ html {
     padding: 20px;
     box-sizing: border-box;
     background: white;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .all-inputs {
@@ -193,4 +193,42 @@ select {
 .error-message p {
     color: white;
     font-size: 12px;
+}
+
+.modal {
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    width: 100%;
+    height: 300px;
+    background: white;
+}
+
+.modal-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid green;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
 }
