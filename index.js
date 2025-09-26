@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const otherSelect = document.querySelector('.select-other');
     const otherInput = otherSelect.querySelector('input');
     const modal = document.querySelector('.modal')
+    const mailWrapper = document.querySelector('.mail')
+    const emailInput = mailWrapper.querySelector('input')
+
 
     document.querySelectorAll('.error-message').forEach(err => {
         err.style.display = 'none';
@@ -32,16 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault()
 
         const textareas = document.querySelectorAll('.textarea')
-        const inputs = document.querySelectorAll('.input')
+        const inputs = Array.from(document.querySelectorAll('.input')).filter(input => input.id !== 'email');
         let formValid = true
         const formData = {}
 
-        document.querySelectorAll('.name-input, .address-input, .phone-mail, .select-other').forEach(div => {
+        document.querySelectorAll('.name-input, .address-input, .phone, .select-other').forEach(div => {
             div.style.background = ''
         });
 
         inputs.forEach(input => {
-            const wrapper = input.closest('.name-input, .address-input, .phone-mail, .phone, .mail, .select-other')
+            const wrapper = 
+                            input.closest('.name-input') || 
+                            input.closest('.address-input') || 
+                            input.closest('.phone') || 
+                            input.closest('.select-other');
             if (!input.value.trim()) {
                 formValid = false
                 if (wrapper) {
@@ -51,11 +58,40 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (error) error.style.display = 'flex'
                 }
             } else {
-                if (wrapper) wrapper.style.background = 'rgb(241, 245, 255)'
-                const error = wrapper.querySelector('.error-message')
-                error.style.display = 'none'
+                if (wrapper) {
+                    wrapper.style.background = 'rgb(241, 245, 255)'
+                    const error = wrapper.querySelector('.error-message')
+                    error.style.display = 'none'
+                }
             }
         });
+
+        if (emailInput) {
+            formValid = false
+            const error = mailWrapper.querySelector('.mail-error');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailVal = emailInput.value.trim();
+
+            if (!emailVal) {
+                mailWrapper.style.background = '';
+                mailWrapper.style.padding = '';
+                if (error) error.style.display = 'none';
+            } else if (!emailRegex.test(emailVal)) {
+                formValid = false;
+                mailWrapper.style.background = 'rgb(255, 237, 237)';
+                mailWrapper.style.padding = '10px';
+                if (error){
+                    error.style.display = 'flex';
+                } 
+            } else {
+                mailWrapper.style.background = 'rgb(241, 245, 255)';
+                mailWrapper.style.padding = '';
+                formValid = true
+                if (error) error.style.display = 'none';
+                formData['email'] = emailVal;
+            }
+        }
+
 
         if (!select.value) {
             formValid = false;
@@ -112,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             err.style.display = 'none'
         });
 
-        localStorage.setItem('customerDetails', JSON.stringify(formData))
+        //localStorage.setItem('customerDetails', JSON.stringify(formData))
         window.scrollTo({ top: 0, behavior: 'smooth' });
         setTimeout(() => {
                 requestAnimationFrame(() => {

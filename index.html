@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
 </head>
 <body>
     <form class="main-form">
@@ -80,12 +80,12 @@
                 <div class="mail">
                     <h3 class="input-name">E-mail</h3>
                     <label for="email" style="display: none;">E-mail</label>
-                    <input id="email" type="email" class="input short-input" placeholder="example@example.com" />
+                    <input id="email" type="text" class="input short-input" placeholder="example@example.com" />
                     <p>example@example.com</p>
                     <!-- error-message -->
-                    <div class="error-message">
+                    <div class="error-message mail-error">
                         <img src="assets/info.png" width="20px" height="20px"/>
-                        <p>This filed is required</p>
+                        <p>Please enter a valid mail</p>
                     </div>
                 </div>
             </div>
