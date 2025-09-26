@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault()
 
         const textareas = document.querySelectorAll('.textarea')
-        const inputs = Array.from(document.querySelectorAll('.input')).filter(input => input.id !== 'email');
+        const inputs = Array.from(document.querySelectorAll('.input')).filter(input => input.id !== 'email' && input.id !== 'other');
         let formValid = false
         const formData = {}
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        formValid = !invalid.filter(item => !item).length 
+        formValid = !invalid.filter(item => !item).length;
 
         if (emailInput) {
             const error = mailWrapper.querySelector('.mail-error');
