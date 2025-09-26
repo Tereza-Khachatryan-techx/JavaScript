@@ -56,21 +56,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const textareas = document.querySelectorAll('.textarea')
         const inputs = Array.from(document.querySelectorAll('.input')).filter(input => input.id !== 'email');
-        let formValid = true
+        let formValid = false
         const formData = {}
 
         document.querySelectorAll('.name-input, .address-input, .phone, .select-other').forEach(div => {
             div.style.background = ''
         });
+        const invalid = [];
 
         inputs.forEach(input => {
+            
             const wrapper = 
                             input.closest('.name-input') || 
                             input.closest('.address-input') || 
-                            input.closest('.phone') || 
-                            input.closest('.select-other');
+                            input.closest('.phone');
             if (!input.value.trim()) {
-                formValid = false
+                invalid.push(false);
                 if (wrapper) {
                     wrapper.style.background = 'rgb(255, 237, 237)'
                     wrapper.style.padding = '10px'
@@ -79,12 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 if (wrapper) {
+                    invalid.push(true);
                     wrapper.style.background = 'rgb(241, 245, 255)'
                     const error = wrapper.querySelector('.error-message')
                     error.style.display = 'none'
                 }
             }
         });
+
+        formValid = !invalid.filter(item => !item).length 
 
         if (emailInput) {
             const error = mailWrapper.querySelector('.mail-error');
@@ -105,11 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 mailWrapper.style.background = 'rgb(241, 245, 255)';
                 mailWrapper.style.padding = '';
-                formValid = true
                 if (error) error.style.display = 'none';
                 formData['email'] = emailVal;
             }
-        }
+        } 
 
         if (!select.value) {
             formValid = false

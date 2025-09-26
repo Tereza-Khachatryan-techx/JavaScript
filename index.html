@@ -12,7 +12,7 @@
         <h1 class="heading">Customer Details:</h1>
         <div class="all-inputs">
             <!-- Full Name -->
-            <div class="name-input">
+            <fieldset class="name-input">
                 <h3 class="input-name">Full Name</h3>
                 <div class="inputs">
                     <div class="first-name">
@@ -30,10 +30,10 @@
                     <img src="assets/info.png" width="20px" height="20px"/>
                     <p>This filed is required</p>
                 </div>
-            </div>
+            </fieldset>
 
             <!-- Address -->
-            <div class="address-input">
+            <fieldset class="address-input">
                 <h3 class="input-name">Address:</h3>
                 <label for="address-line1" style="display: none;">Street Address</label>
                 <input id="address-line1" class="input" type="text"  />
@@ -63,11 +63,11 @@
                     <img src="assets/info.png" width="20px" height="20px"/>
                     <p>This filed is required</p>
                 </div>
-            </div>
+            </fieldset>
 
             <!-- Phone and Email -->
             <div class="inputs phone-mail">
-                <div class="phone">
+                <fieldset class="phone">
                     <h3 class="input-name">Phone Number</h3>
                     <label for="phone" style="display: none;">Phone Number</label>
                     <input id="phone" inputmode="numeric" pattern="\d*"  type="text" class="input short-input" placeholder="(000) 000-0000" />
@@ -76,8 +76,8 @@
                         <img src="assets/info.png" width="20px" height="20px"/>
                         <p>This filed is required</p>
                     </div>
-                </div>
-                <div class="mail">
+                </fieldset>
+                <fieldset class="mail">
                     <h3 class="input-name">E-mail</h3>
                     <label for="email" style="display: none;">E-mail</label>
                     <input id="email" type="text" class="input short-input" placeholder="example@example.com" />
@@ -87,7 +87,7 @@
                         <img src="assets/info.png" width="20px" height="20px"/>
                         <p>Please enter a valid mail</p>
                     </div>
-                </div>
+                </fieldset>
             </div>
         </div>
         <div class="second-part">

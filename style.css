@@ -167,10 +167,18 @@ select {
     transition: background-color 0.3s ease;
 }
 
+.phone, .mail {
+    border: none;
+}
+
+.name-input, .address-input, .phone, .mail {
+    border: none;
+}
+
 .phone-mail {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 5px;
 }
 
 .select-other {
