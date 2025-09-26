@@ -12,6 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
         err.style.display = 'none';
     });
 
+    const inputFields = Array.from(document.querySelectorAll('.input'))
+    inputFields.forEach((input, index) => {
+        input.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter'){
+                const nextInput = inputFields[index + 1]
+                if(nextInput){
+                    nextInput.focus()
+                } else {
+                    const textArea = document.querySelector('.textarea')
+                    if(textArea) {
+                        textArea.focus()
+                    } else {
+                        const submitBtn = document.querySelector('button[type="submit"]')
+                        if(submitBtn) submitBtn.focus()
+                    }
+                } 
+            }
+        })
+    });
+
     select.addEventListener('change', () => {
         if (select.value === 'other') {
             otherSelect.style.display = 'block';
@@ -67,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (emailInput) {
-            formValid = false
             const error = mailWrapper.querySelector('.mail-error');
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const emailVal = emailInput.value.trim();
@@ -92,9 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-
         if (!select.value) {
-            formValid = false;
+            formValid = false
             select.style.background = 'rgb(255, 237, 237)'
         } else if (select.value === 'other') {
             otherSelect.style.display = 'block'
@@ -107,12 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 formData['heardAboutUs'] = otherInput.value.trim()
             }
         } else {
-            formValid = true
             select.style.background = 'rgb(241, 245, 255)'
             formData['heardAboutUs'] = select.value
         }
 
         if (!formValid) {
+            window.scrollTo({ top: 100, behavior: 'smooth' });
             console.log('Form is invalid. Please correct the highlighted fields.')
             return;
         }
@@ -148,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
             err.style.display = 'none'
         });
 
-        //localStorage.setItem('customerDetails', JSON.stringify(formData))
+        localStorage.setItem('customerDetails', JSON.stringify(formData))
         window.scrollTo({ top: 0, behavior: 'smooth' });
         setTimeout(() => {
                 requestAnimationFrame(() => {
@@ -163,4 +181,3 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     modal.style.display = 'none'
 })
-
