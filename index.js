@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.error-message').forEach(err => {
         err.style.display = 'none';
     });
-    
+
     const inputFields = Array.from(document.querySelectorAll('.input'))
     inputFields.forEach((input, index) => {
         input.addEventListener('keydown', (e) => {
