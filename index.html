@@ -13,7 +13,7 @@
         <div class="all-inputs">
             <!-- Full Name -->
             <fieldset class="name-input">
-                <h2 class="input-name">Full Name</h2>
+                <h2 class="input-name">Full Name <span class="ast-span">*</span></h2>
                 <div class="inputs">
                     <div class="first-name">
                         <label for="first-name" style="display: none;">First name</label>
@@ -34,7 +34,7 @@
 
             <!-- Address -->
             <fieldset class="address-input">
-                <h2 class="input-name">Address:</h2>
+                <h2 class="input-name">Address: <span class="ast-span">*</span></h2>
                 <label for="address-line1" style="display: none;">Street Address</label>
                 <input id="address-line1" class="input" type="text"  />
                 <p>Street Address</p>
@@ -68,7 +68,7 @@
             <!-- Phone and Email -->
             <div class="inputs phone-mail">
                 <fieldset class="phone">
-                    <h2 class="input-name">Phone Number</h2>
+                    <h2 class="input-name">Phone Number <span class="ast-span">*</span></h2>
                     <label for="phone" style="display: none;">Phone Number</label>
                     <input id="phone" inputmode="numeric" pattern="\d*"  type="text" class="input short-input" placeholder="(000) 000-0000" />
                     <!-- Error-message -->
@@ -92,7 +92,7 @@
         </div>
         <div class="second-part">
             <!-- How did you hear about us -->
-            <h2 class="input-name">How did you hear about us?</h2>
+            <h2 class="input-name">How did you hear about us? <span class="ast-span">*</span></h2>
             <select class="short-input select">
                 <option value="">Select an option</option>
                 <option value="none">None</option>
@@ -102,7 +102,7 @@
                 <option value="other">Other</option>
             </select>
             <div class="select-other">
-                <h2>Other</h2>
+                <h2 class="input-name">Other <span class="ast-span">*</span></h2>
                 <input class="short-input input" id="other" type="text" placeholder="Specify other..."/>
                 <div class="error-message">
                     <img src="assets/info.png" width="20px" height="20px"/>

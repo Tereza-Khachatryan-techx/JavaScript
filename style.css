@@ -34,6 +34,10 @@ html {
     color:  rgb(44, 51, 69);
 }
 
+.ast-span {
+    color: red;
+}
+
 .address-input {
     display: flex;
     flex-direction: column;

@@ -7,11 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const mailWrapper = document.querySelector('.mail')
     const emailInput = mailWrapper.querySelector('input')
 
-
     document.querySelectorAll('.error-message').forEach(err => {
         err.style.display = 'none';
     });
-
+    
     const inputFields = Array.from(document.querySelectorAll('.input'))
     inputFields.forEach((input, index) => {
         input.addEventListener('keydown', (e) => {
@@ -65,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const invalid = [];
 
         inputs.forEach(input => {
-            
             const wrapper = 
                             input.closest('.name-input') || 
                             input.closest('.address-input') || 
