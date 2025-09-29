@@ -121,6 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 formValid = false;
                 otherSelect.style.background = 'rgb(255, 237, 237)'
                 otherSelect.style.padding = '10px'
+                const otherError = otherSelect.querySelector('.error-message');
+                otherError.style.display = 'flex';
             } else {
                 otherSelect.style.background = 'rgb(241, 245, 255)'
                 formData['heardAboutUs'] = otherInput.value.trim()
