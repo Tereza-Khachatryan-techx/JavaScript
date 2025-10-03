@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    min-height: 100vh;
+    background: rgb(241, 245, 255);
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+.main-form {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: white;
+    margin: 20px;
+}
+
+.all-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 2px solid rgba(103, 87, 87, 0.382);
+}
+
+.input-name {
+    font-size: 16px;
+    color:  rgb(44, 51, 69);
+}
+
+.ast-span {
+    color: red;
+}
+
+.address-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.first-name,
+.last-name {
+    flex: 1;
+}
+
+.input {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.short-input {
+    max-width: 370px;
+    width: 100%;
+}
+
+.select {
+    height: 50px;
+    background: none;
+    border: 1px solid rgba(103, 87, 87, 0.382);
+}
+
+.inputs p,
+.address-input p {
+    font-size: 12px;
+    color: rgb(87, 100, 126);
+}
+
+.textarea {
+    outline: none;
+}
+
+.check-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.checkbox-input {
+    display: flex;
+}
+
+.table-div {
+    width: 100%;
+    margin-top: 20px;
+}
+.table {
+    border: none;
+    width: 100%;
+    height: 100px;
+    border-collapse: collapse;
+}
+
+.table td, th {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+thead th:first-child{
+    border: none;
+    background: white;
+}
+
+.table-input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+thead tr {
+    background:  rgb(195, 202, 216);
+}
+
+.table-num {
+    width: 50px;
+    background:  rgb(195, 202, 216);
+}
+
+thead {
+ height: 50px;
+}
+
+tbody {
+    height: 100px;
+}
+
+.submit-container {
+    margin-top: 20px;
+    width: 100%;
+    border-top: 2px solid rgba(103, 87, 87, 0.382);
+    padding: 10px;
+}
+
+.submit-btn {
+    margin-top: 50px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    background: rgb(24, 189, 91);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.submit-btn:hover{
+    background: rgb(18, 155, 73);
+}
+
+.name-input,
+.address-input,
+.phone-mail,
+.select,
+select {
+    transition: background-color 0.3s ease;
+}
+
+.phone, .mail {
+    border: none;
+}
+
+.name-input, .address-input, .phone, .mail {
+    border: none;
+}
+
+.phone-mail {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.select-other {
+    display: none;
+    margin-top:10px;
+}
+
+.error-message{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    background:  rgb(242, 58, 60);
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 2px;
+    gap: 5px;
+}
+
+.error-message p {
+    color: white;
+    font-size: 12px;
+}
+
+.modal {
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    width: 100%;
+    height: 300px;
+    background: white;
+}
+
+.modal-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid green;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
