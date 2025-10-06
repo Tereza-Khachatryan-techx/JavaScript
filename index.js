@@ -30,9 +30,9 @@ async function fetchUsers(includeHeader) {
       throw new Error("No users found");
     }
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    const fulNames = data.data.map((user) => `${user.name}`);
+    const fullNames = data.data.map((user) => `${user.name}`);
 
-    fulNames.forEach((name) => {
+    fullNames.forEach((name) => {
       const li = document.createElement("li");
       li.textContent = name;
       usersEl.appendChild(li);
