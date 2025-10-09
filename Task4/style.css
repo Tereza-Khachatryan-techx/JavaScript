@@ -1,15 +1,15 @@
 .clearAll {
-    background: rgb(0, 157, 255);
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    height: 40px;
-    width: 200px;
+  background: rgb(0, 157, 255);
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  height: 40px;
+  width: 200px;
 }
 
 .message {
-    color: green;
-    margin: 30px
+  color: green;
+  margin: 30px;
 }
