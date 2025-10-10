@@ -1,0 +1,29 @@
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.count-container {
+  align-items: center;
+  background: yellowgreen;
+  border-radius: 25px;
+  color: white;
+  display: flex;
+  font-size: 48px;
+  font-weight: bold;
+  height: 200px;
+  justify-content: center;
+  width: 200px;
+}
+
+.countDownBtn {
+  background: none;
+  border: none;
+  color: yellowgreen;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  height: 50px;
+  margin-top: 50px;
+}
