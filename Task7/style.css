@@ -1,0 +1,12 @@
+.tick-container {
+  margin: 50px;
+}
+
+.tick-btn {
+  background: midnightblue;
+  border: none;
+  color: white;
+  font-size: 18px;
+  height: 40px;
+  width: 150px;
+}

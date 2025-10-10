@@ -1,0 +1,21 @@
+.main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.joke {
+  padding: 50px;
+}
+
+.get-joke-btn {
+  background: rgb(0, 255, 17);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  height: 50px;
+  margin-top: 20px;
+  width: 200px;
+}

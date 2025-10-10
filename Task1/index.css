@@ -1,0 +1,54 @@
+body {
+  align-items: center;
+  background: linear-gradient(
+    312deg,
+    rgba(255, 255, 255, 1) 16%,
+    rgba(5, 5, 5, 1) 87%
+  );
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+.header {
+  color: white;
+}
+
+#profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.user-input {
+  background: black;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  height: 40px;
+  outline: none;
+  padding-left: 10px;
+  width: 300px;
+}
+
+.submit-btn {
+  align-items: center;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  height: 40px;
+  justify-content: center;
+  outline: none;
+  transition: 1s ease;
+  width: 310px;
+}
+
+.success {
+  color: green;
+  margin-top: 30px;
+}
